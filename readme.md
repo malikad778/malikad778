@@ -10,7 +10,7 @@
 &nbsp;
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/adnan-haider/)
 &nbsp;
-[![The Regret Index](https://img.shields.io/badge/SaaS_%E2%80%94_theregretindex.co-111111?style=flat-square&logo=vercel&logoColor=white)](https://theregretindex.co)
+[![The Regret Index](https://img.shields.io/badge/SaaS_%E2%80%94_regretindex.me-111111?style=flat-square&logo=vercel&logoColor=white)](https://regretindex.me)
 
 </div>
 
