@@ -215,12 +215,6 @@ WCAG 2.1 AA compliance for Laravel Blade/Livewire. Static accessibility analyzer
 
 <div align="center">
 
-<img height="170em" src="https://github-readme-stats.vercel.app/api?username=malikad778&show_icons=true&theme=github_dark&include_all_commits=true&count_private=true&hide_border=true&bg_color=0D1117&title_color=ffffff&icon_color=ffffff&text_color=aaaaaa"/>
-&nbsp;
-<img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=malikad778&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=ffffff&text_color=aaaaaa"/>
-
-<br/><br/>
-
 [![GitHub Streak](https://streak-stats.demolab.com?user=malikad778&theme=github-dark-blue&hide_border=true&background=0D1117&stroke=333333&ring=ffffff&fire=ffffff&currStreakLabel=ffffff&sideLabels=aaaaaa&dates=555555)](https://git.io/streak-stats)
 
 </div>
