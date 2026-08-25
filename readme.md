@@ -184,7 +184,7 @@ Watches the JSON a third party actually sends you and infers its shape over time
 
 ### [Laravel-migration-guard](https://github.com/malikad778/Laravel-migration-guard)
 
-<img src="https://img.shields.io/github/stars/malikad778/Laravel-migration-guard?style=flat-square&labelColor=0D1117&color=D29922&logo=github&logoColor=D29922" alt="stars"/> <img src="https://img.shields.io/github/last-commit/malikad778/Laravel-migration-guard?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/>
+<img src="https://img.shields.io/github/stars/malikad778/Laravel-migration-guard?style=flat-square&labelColor=0D1117&color=D29922&logo=github&logoColor=D29922" alt="stars"/> <img src="https://img.shields.io/github/last-commit/malikad778/Laravel-migration-guard?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/> <img src="https://img.shields.io/packagist/dt/malikad778/laravel-migration-guard?style=flat-square&labelColor=0D1117&color=3FB950&logo=packagist&logoColor=3FB950" alt="Packagist installs"/>
 
 Reads your migrations in CI and fails the build on the ones that take a table lock or drop a column with data behind it. Zero config. Rails has `strong_migrations`; Laravel did not.
 
@@ -195,7 +195,7 @@ Reads your migrations in CI and fails the build on the ones that take a table lo
 
 ### [wp-hook-check](https://github.com/malikad778/wp-hook-check)
 
-<img src="https://img.shields.io/github/stars/malikad778/wp-hook-check?style=flat-square&labelColor=0D1117&color=D29922&logo=github&logoColor=D29922" alt="stars"/> <img src="https://img.shields.io/github/last-commit/malikad778/wp-hook-check?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/>
+<img src="https://img.shields.io/github/stars/malikad778/wp-hook-check?style=flat-square&labelColor=0D1117&color=D29922&logo=github&logoColor=D29922" alt="stars"/> <img src="https://img.shields.io/github/last-commit/malikad778/wp-hook-check?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/> <img src="https://img.shields.io/packagist/dt/malikad778/wp-hook-check?style=flat-square&labelColor=0D1117&color=3FB950&logo=packagist&logoColor=3FB950" alt="Packagist installs"/>
 
 Orphaned listeners, unheard hooks, misspelled action names. Finds all three by reading source, without ever bootstrapping WordPress, so it is fast enough to run on every commit.
 
@@ -272,13 +272,11 @@ Gates OTP *before* the user row is written, so bots never create the account at 
 
 <div align="center">
 
-<img src="https://img.shields.io/badge/778-CONTRIBUTIONS%20·%2012%20MONTHS-0D1117?style=for-the-badge&labelColor=1F6FEB" alt="778 contributions in 12 months"/> <img src="https://img.shields.io/badge/83-STARS%20ON%20PACKAGES-0D1117?style=for-the-badge&labelColor=D29922" alt="83 stars on packages"/> <img src="https://img.shields.io/badge/13-PUBLIC%20REPOS%20·%20NO%20FORKS-0D1117?style=for-the-badge&labelColor=8957E5" alt="13 public repos, no forks"/>
-
-<br/><br/>
-
-<img src="https://streak-stats.demolab.com?user=malikad778&hide_border=true&background=0D1117&stroke=21262D&ring=1F6FEB&fire=8957E5&currStreakLabel=F0F6FC&sideLabels=8B949E&dates=6E7681&currStreakNum=F0F6FC&sideNums=F0F6FC" alt="Contribution streak"/>
+<img src="https://img.shields.io/packagist/dt/malikad778/laravel-migration-guard?style=for-the-badge&labelColor=1F6FEB&color=0D1117&logo=packagist&logoColor=white&label=MIGRATION%20GUARD%20INSTALLS" alt="Packagist installs for Laravel-migration-guard"/> <img src="https://img.shields.io/github/stars/malikad778?style=for-the-badge&labelColor=D29922&color=0D1117&affiliations=OWNER&label=STARS%20ACROSS%20PACKAGES" alt="Total stars across owned repositories"/> <img src="https://img.shields.io/badge/778-CONTRIBUTIONS%20·%2012%20MONTHS-0D1117?style=for-the-badge&labelColor=8957E5" alt="778 contributions in 12 months"/>
 
 </div>
+
+The install count is the number I actually watch. Stars are a bookmark; an install means somebody put the package in a `composer.json` and let it run in their build.
 
 ### Language split across the eight packages, by source bytes
 
