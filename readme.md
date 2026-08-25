@@ -74,13 +74,13 @@ A longitudinal decision&#8209;archiving platform: log a choice, revisit it later
 
 ## Open source
 
-Small, sharp PHP tooling. Each one exists because I hit the problem on a real project first.
+Small, sharp PHP tooling, **83 stars** across the set. Each one exists because I hit the problem on a real project first.
 
 <table>
 <tr>
 <td width="50%" valign="top">
 
-#### [php-sentinel](https://github.com/malikad778/php-sentinel)
+#### [php-sentinel](https://github.com/malikad778/php-sentinel) <sub>&#9733; 18</sub>
 Passive API contract monitoring for PHP 8.3+. Learns the shape of upstream JSON responses and flags drift (a field that vanished, a type that changed) without you writing a single schema by hand.
 
 <img src="https://img.shields.io/badge/PHP-8.3+-777BB4?style=flat-square&logo=php&logoColor=white"/> <img src="https://img.shields.io/badge/MIT-3fb950?style=flat-square"/>
@@ -88,7 +88,7 @@ Passive API contract monitoring for PHP 8.3+. Learns the shape of upstream JSON 
 </td>
 <td width="50%" valign="top">
 
-#### [Laravel-migration-guard](https://github.com/malikad778/Laravel-migration-guard)
+#### [Laravel-migration-guard](https://github.com/malikad778/Laravel-migration-guard) <sub>&#9733; 18</sub>
 AST parser that reads your migrations in CI and refuses the ones that take a table lock or drop a column with data behind it. Catches the deploy that would have caused the incident.
 
 <img src="https://img.shields.io/badge/PHP-8.2+-777BB4?style=flat-square&logo=php&logoColor=white"/> <img src="https://img.shields.io/badge/Static%20analysis-1f6feb?style=flat-square"/>
@@ -98,7 +98,7 @@ AST parser that reads your migrations in CI and refuses the ones that take a tab
 <tr>
 <td width="50%" valign="top">
 
-#### [nexus-inventory](https://github.com/malikad778/nexus-inventory)
+#### [nexus-inventory](https://github.com/malikad778/nexus-inventory) <sub>&#9733; 29</sub>
 Multi&#8209;channel stock synchronisation for Laravel. Keeps Shopify, WooCommerce, Amazon and Etsy in agreement through webhooks and queued reconciliation, including the awkward part where two channels sell the last unit at once.
 
 <img src="https://img.shields.io/badge/Laravel-10--12-FF2D20?style=flat-square&logo=laravel&logoColor=white"/> <img src="https://img.shields.io/badge/Queues-DC382D?style=flat-square&logo=redis&logoColor=white"/>
@@ -106,7 +106,7 @@ Multi&#8209;channel stock synchronisation for Laravel. Keeps Shopify, WooCommerc
 </td>
 <td width="50%" valign="top">
 
-#### [notification-center](https://github.com/malikad778/notification-center)
+#### [notification-center](https://github.com/malikad778/notification-center) <sub>&#9733; 8</sub>
 Multi&#8209;channel dispatch for Laravel 12 with circuit&#8209;breaker failover. When a provider starts timing out it trips, reroutes, and stops burning worker time on a dead endpoint.
 
 <img src="https://img.shields.io/badge/Laravel-12-FF2D20?style=flat-square&logo=laravel&logoColor=white"/> <img src="https://img.shields.io/badge/Event--driven-8957e5?style=flat-square"/>
@@ -116,18 +116,36 @@ Multi&#8209;channel dispatch for Laravel 12 with circuit&#8209;breaker failover.
 <tr>
 <td width="50%" valign="top">
 
-#### [laravel-blade-ally](https://github.com/malikad778/laravel-blade-ally)
-WCAG 2.1 AA linter for Blade and Livewire, aimed at European Accessibility Act deadlines. Pure static inspection, so it costs nothing at runtime.
+#### [blade-access](https://github.com/malikad778/blade-access)
+73 WCAG 2.1 AA rules for Blade and Livewire, aimed at European Accessibility Act deadlines. Baseline file so you can adopt it on a legacy codebase without a red build on day one. Zero runtime dependency.
 
 <img src="https://img.shields.io/badge/Blade-FF2D20?style=flat-square&logo=laravel&logoColor=white"/> <img src="https://img.shields.io/badge/WCAG%202.1%20AA-3fb950?style=flat-square"/>
 
 </td>
 <td width="50%" valign="top">
 
-#### [wp-hook-check](https://github.com/malikad778/wp-hook-check)
-Finds orphaned listeners and misspelled hook names in WordPress source without bootstrapping WordPress. Fast enough to run on every commit.
+#### [wp-hook-check](https://github.com/malikad778/wp-hook-check) <sub>★ 10</sub>
+Finds orphaned listeners, unheard hooks and misspelled action names in WordPress source without bootstrapping WordPress. Fast enough to run on every commit.
 
 <img src="https://img.shields.io/badge/PHP%20CLI-777BB4?style=flat-square&logo=php&logoColor=white"/> <img src="https://img.shields.io/badge/WordPress-21759B?style=flat-square&logo=wordpress&logoColor=white"/>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### [ai-mcp](https://github.com/malikad778/ai-mcp)
+Makes a WordPress site legible to AI agents. Semantic chunking, FAQ extraction, media and author indexing, plus `llms.txt` and an MCP manifest, exposed over REST.
+
+<img src="https://img.shields.io/badge/WordPress-21759B?style=flat-square&logo=wordpress&logoColor=white"/> <img src="https://img.shields.io/badge/MCP-8957e5?style=flat-square"/>
+
+</td>
+<td width="50%" valign="top">
+
+#### [woocommerce-otp-auth-engine](https://github.com/malikad778/woocommerce-otp-auth-engine)
+OTP registration gating that runs *before* the user row is written, so bots never create the account. Includes SMS pumping and AIT fraud defence, which is the part most OTP plugins leave you exposed on.
+
+<img src="https://img.shields.io/badge/WooCommerce-96588A?style=flat-square&logo=woocommerce&logoColor=white"/> <img src="https://img.shields.io/badge/Fraud%20defence-3fb950?style=flat-square"/>
 
 </td>
 </tr>
