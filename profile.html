@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Adnan Haider · Backend Engineer</title>
+<meta name="description" content="Backend engineer. Laravel, PHP 8.3, multi-tenant SaaS, event-driven systems. Author of php-sentinel, nexus-inventory and Laravel-migration-guard."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0D1117;
+  --surface:#161B22;
+  --surface-low:#010409;
+  --border:#21262D;
+  --border-strong:#30363D;
+  --text:#F0F6FC;
+  --body:#C9D1D9;
+  --muted:#8B949E;
+  --faint:#6E7681;
+  --primary:#1F6FEB;
+  --secondary:#8957E5;
+  --success:#3FB950;
+  --amber:#D29922;
+  --col:880px;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono","Cascadia Mono",Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+body{
+  margin:0;background:var(--bg);color:var(--body);
+  font-family:var(--sans);font-size:16px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:4px}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:4px}
+h1,h2,h3{text-wrap:balance;color:var(--text);margin:0}
+p{margin:0}
+code,pre{font-family:var(--mono)}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,17,23,.82);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-in{
+  max-width:var(--col);margin:0 auto;padding:14px 24px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{font-family:var(--mono);font-size:13px;font-weight:700;color:var(--text);letter-spacing:.06em}
+.brand span{color:var(--primary)}
+.nav-links{display:flex;gap:22px}
+.nav-links a{
+  font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--muted);transition:color .18s ease;
+}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+@media (max-width:760px){.nav-links{display:none}}
+
+/* ---------- layout ---------- */
+main{max-width:var(--col);margin:0 auto;padding:0 24px 96px}
+section{padding-block:64px;border-top:1px solid var(--border)}
+section:first-of-type{border-top:0}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:block;
+}
+.stack{display:flex;flex-direction:column;gap:24px}
+
+/* ---------- header ---------- */
+header{padding:72px 0 64px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px}
+header h1{font-size:clamp(32px,6vw,46px);font-weight:600;letter-spacing:-.025em;line-height:1.1}
+.role{
+  font-family:var(--mono);font-size:12px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--muted);max-width:56ch;
+}
+.role b{color:var(--primary);font-weight:500}
+.pitch{max-width:60ch;color:var(--body);font-size:17px}
+.links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:8px}
+.links a{
+  display:inline-flex;align-items:center;gap:8px;padding:9px 15px;
+  border:1px solid var(--border-strong);border-radius:10px;
+  font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--text);
+  transition:border-color .18s ease,background .18s ease;
+}
+.links a:hover{border-color:var(--primary);background:var(--surface);text-decoration:none}
+.links svg{width:14px;height:14px;flex:none}
+.dot{width:6px;height:6px;border-radius:50%;flex:none}
+
+/* ---------- cards ---------- */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:26px}
+.card h3{font-size:20px;font-weight:600;letter-spacing:-.01em}
+.sub{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:6px}
+.lead{margin-top:16px;font-size:15.5px}
+
+/* ---------- code ---------- */
+.code{
+  margin-top:20px;background:var(--surface-low);border:1px solid var(--border);
+  border-radius:10px;overflow:hidden;
+}
+.code-bar{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:9px 14px;border-bottom:1px solid var(--border);background:#0d1117;
+}
+.code-bar span{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+.code pre{margin:0;padding:16px;overflow-x:auto;font-size:13px;line-height:1.75;color:var(--body)}
+.c-cm{color:var(--faint)}
+.c-ty{color:var(--primary);font-weight:500}
+.c-hi{color:var(--secondary)}
+.c-tr{color:var(--faint)}
+
+/* ---------- tables ---------- */
+.tbl-wrap{margin-top:22px;border:1px solid var(--border);border-radius:10px;overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:520px}
+thead th{
+  text-align:left;padding:10px 14px;background:var(--surface-low);
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;border-bottom:1px solid var(--border);
+}
+td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--body)}
+tbody tr:last-child td{border-bottom:0}
+td:first-child{color:var(--text);font-weight:500;white-space:nowrap}
+td code{font-size:12.5px;color:var(--secondary);background:rgba(137,87,229,.1);padding:1px 5px;border-radius:4px}
+
+/* ---------- chips ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+.chip{
+  font-family:var(--mono);font-size:11px;letter-spacing:.04em;
+  padding:5px 10px;border-radius:6px;background:var(--bg);
+  border:1px solid var(--border);color:var(--muted);
+}
+.chip.ok{color:var(--success);border-color:rgba(63,185,80,.4);background:rgba(63,185,80,.08);display:inline-flex;align-items:center;gap:6px}
+.chip.ok .dot{background:var(--success)}
+
+/* ---------- bullets ---------- */
+ul.marks{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
+ul.marks li{position:relative;padding-left:18px;font-size:15px}
+ul.marks li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:6px;height:6px;background:var(--primary);
+}
+ul.marks b{color:var(--text);font-weight:600}
+
+/* ---------- grids ---------- */
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media (max-width:720px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+/* ---------- repo cards ---------- */
+.repo{
+  background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:18px;
+  display:flex;flex-direction:column;gap:9px;transition:border-color .18s ease;
+}
+.repo:hover{border-color:var(--border-strong)}
+.repo-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.repo-top a{font-family:var(--mono);font-size:13.5px;font-weight:500;word-break:break-word}
+.stars{
+  font-family:var(--mono);font-size:11.5px;color:var(--amber);
+  display:inline-flex;align-items:center;gap:4px;flex:none;
+  font-variant-numeric:tabular-nums;
+}
+.stars svg{width:12px;height:12px}
+.repo p{font-size:14px;color:var(--body);flex-grow:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.05em;padding:3px 8px;border-radius:5px;background:var(--bg);border:1px solid var(--border);color:var(--faint)}
+
+/* ---------- stack rows ---------- */
+.srow{display:grid;grid-template-columns:78px 1fr;gap:18px;align-items:start;padding:16px 0;border-bottom:1px solid var(--border)}
+.srow:last-child{border-bottom:0}
+.srow>span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:6px}
+@media (max-width:560px){.srow{grid-template-columns:1fr;gap:8px}.srow>span{padding-top:0}}
+
+/* ---------- stats ---------- */
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;text-align:center}
+.stat .n{font-size:32px;font-weight:600;color:var(--text);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.15}
+.stat .l{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+.stat .n em{font-style:normal;color:var(--secondary)}
+.langs{margin-top:16px;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:22px}
+.bar{display:flex;height:9px;border-radius:5px;overflow:hidden;background:var(--bg)}
+.bar i{display:block;height:100%}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:16px}
+.legend span{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* ---------- principles ---------- */
+.prin{display:flex;flex-direction:column;gap:22px;max-width:68ch}
+.prin p{font-size:16px}
+.prin b{color:var(--text);font-weight:600}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--border);padding:44px 24px 56px;text-align:center}
+.foot-in{max-width:var(--col);margin:0 auto;display:flex;flex-direction:column;gap:14px;align-items:center}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;font-family:var(--mono);font-size:12px}
+.foot-links a{color:var(--body)}
+.foot-links i{color:var(--faint);font-style:normal}
+.avail{font-family:var(--mono);font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.avail .dot{background:var(--success);box-shadow:0 0 0 3px rgba(63,185,80,.15)}
+.copy{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-in">
+    <div class="brand">malikad778<span>/</span>adnan</div>
+    <div class="nav-links">
+      <a href="#building">Building</a>
+      <a href="#oss">Open source</a>
+      <a href="#stack">Stack</a>
+      <a href="#activity">Activity</a>
+      <a href="#process">Process</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header>
+    <h1>Adnan Haider</h1>
+    <p class="role"><b>Backend Engineer</b> &middot; Laravel &middot; PHP 8.3 &middot; Multi&#8209;tenant SaaS &middot; Event&#8209;driven systems</p>
+    <p class="pitch">I build the parts that have to keep working at 3am: queue pipelines, webhook ingestion, tenant isolation, and the static analysis tooling that stops a bad migration from ever reaching production.</p>
+    <div class="links">
+      <a href="https://codebyadnan.tech">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1F6FEB" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20a15.3 15.3 0 0 1 0-20"/></svg>
+        codebyadnan.tech
+      </a>
+      <a href="https://github.com/malikad778">
+        <svg viewBox="0 0 24 24" fill="#F0F6FC" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7 0-.7 0-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.7 4.7 18.7 5 18.7 5c.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/adnan-haider/">
+        <svg viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M20.4 20.4h-3.6v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1a3.7 3.7 0 0 1 3.4-1.8c3.6 0 4.2 2.4 4.2 5.5v6.1ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2a2.1 2.1 0 0 1 0 4.2Zm1.8 13H3.5V9h3.6v11.4ZM22.2 0H1.8A1.8 1.8 0 0 0 0 1.8v20.4A1.8 1.8 0 0 0 1.8 24h20.4a1.8 1.8 0 0 0 1.8-1.8V1.8A1.8 1.8 0 0 0 22.2 0Z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://regretindex.me">
+        <span class="dot" style="background:#8957E5"></span>
+        The Regret Index
+      </a>
+      <a href="mailto:adnanhaider0347@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        Email
+      </a>
+    </div>
+  </header>
+
+  <!-- ============ BUILDING ============ -->
+  <section id="building">
+    <span class="eyebrow">Currently building</span>
+
+    <div class="card">
+      <h3>Proposal SaaS</h3>
+      <p class="sub">Multi&#8209;tenant rebuild of a delivered client platform</p>
+
+      <p class="lead">A visual proposal builder (GrapesJS canvas, ~900&#8209;line server renderer, headless&#8209;Chrome PDF export, cryptographic sealing, in&#8209;browser signature capture) being turned from a single&#8209;customer install into a real product.</p>
+      <p class="lead">The interesting problem is not the editor. It is that tenancy has to be a security boundary, not a <code style="color:var(--secondary)">where</code> clause someone can forget.</p>
+
+      <div class="code">
+        <div class="code-bar"><span>app/Tenancy</span><span>PHP 8.2</span></div>
+<pre><code><span class="c-cm">// Company = security boundary. Team = visibility filter, layered on top.</span>
+<span class="c-cm">// Collapsing these two axes into one is how you ship a data leak.</span>
+
+<span class="c-ty">Company</span>                  <span class="c-cm">tenant, billing entity, hard isolation</span>
+  <span class="c-tr">└──</span> <span class="c-hi">Team</span>            <span class="c-cm">grouping inside a company, visibility only</span>
+        <span class="c-tr">└──</span> <span class="c-ty">User</span>      <span class="c-cm">1 company, 0..n teams</span>
+                      <span class="c-cm">company role: Owner | Admin | Member</span>
+                      <span class="c-cm">team role:    team_admin | member</span></code></pre>
+      </div>
+
+      <p class="lead">Five invariants I had to defend with tests rather than comments:</p>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>Invariant</th><th>Why it exists</th></tr></thead>
+          <tbody>
+            <tr><td>Scope narrows, never swaps</td><td><code>CompanyScope</code> is never removed, only filtered further. Team visibility built by <em>replacing</em> the company scope is the classic leak.</td></tr>
+            <tr><td>Fails open by design</td><td>No filter applies when no tenant resolves, so console commands and migrations work. Safe only because <code>users.company_id</code> is <code>NOT NULL</code>.</td></tr>
+            <tr><td>Roles are per company</td><td>Spatie's <code>team_foreign_key</code> points at <code>company_id</code>. Pointing it at <code>teams.id</code> leaks roles across tenants.</td></tr>
+            <tr><td>Authorisation self&#8209;scopes</td><td><code>User::can()</code> binds to the user's own company. Otherwise every check inside a job or command silently returns <code>false</code>.</td></tr>
+            <tr><td>Two locale axes</td><td><code>users.locale</code> is the sender's UI. <code>proposals.locale</code> is the signed document. A German agency sends an English proposal to a UK buyer.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="chips">
+        <span class="chip ok"><span class="dot"></span>153 tests &middot; 413 assertions</span>
+        <span class="chip ok"><span class="dot"></span>composer audit clean</span>
+        <span class="chip">Laravel 12</span>
+        <span class="chip">PHP 8.2</span>
+        <span class="chip">Browsershot 5</span>
+        <span class="chip">Spatie Permission</span>
+        <span class="chip">MySQL 8</span>
+        <span class="chip">GrapesJS</span>
+        <span class="chip">25 locales</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHIPPED ============ -->
+  <section>
+    <span class="eyebrow">Shipped and running</span>
+    <div class="stack">
+
+      <div class="card">
+        <h3>Meta Lead Ads &rarr; WhatsApp dispatch engine</h3>
+        <p class="sub">Webhook ingestion with zero&#8209;drop delivery</p>
+        <ul class="marks">
+          <li><b>Acknowledge first, work later.</b> Non&#8209;blocking ingestion returns <code>200</code> in milliseconds, so Meta never marks the webhook unhealthy and starts throttling the campaign.</li>
+          <li><b>Two independent integrity gates.</b> <code>X-Hub-Signature-256</code> verified with <code>hash_equals()</code>, then a unique index on <code>meta_leadgen_id</code> makes a replay a no&#8209;op at the database level rather than in application code.</li>
+          <li><b>Redis workers under Supervisor</b> with time&#8209;bounded exponential backoff and rate&#8209;limit middleware, so a downstream outage degrades throughput instead of dropping leads.</li>
+          <li><b>E.164 normalisation</b> with calling&#8209;code resolution, plus a Filament 3 control panel for campaign mapping and live delivery telemetry.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">Meta Graph API</span>
+          <span class="chip">WhatsApp Cloud API</span>
+          <span class="chip">Wasender</span>
+          <span class="chip">Laravel 11</span>
+          <span class="chip">Filament 3</span>
+          <span class="chip">Redis + Supervisor</span>
+          <span class="chip">HMAC SHA&#8209;256</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://regretindex.me">The Regret Index</a></h3>
+        <p class="sub">Solo founder &middot; architecture and infrastructure</p>
+        <p class="lead">A longitudinal decision&#8209;archiving platform. Log a choice, revisit it later, find out whether your instincts actually calibrate.</p>
+        <ul class="marks">
+          <li>OpenAI embeddings pipeline for similarity search across unstructured decision records</li>
+          <li>MCP server, so LLM clients can query the corpus directly instead of scraping it</li>
+          <li>Stripe subscriptions with idempotent webhook fulfilment and manual capture</li>
+          <li>Cloud Run containers, Upstash Redis, Cloudflare R2 object storage</li>
+        </ul>
+        <div class="chips">
+          <span class="chip ok"><span class="dot"></span>Google Cloud for Startups</span>
+          <span class="chip ok"><span class="dot"></span>MongoDB for Startups</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">MongoDB Atlas</span>
+          <span class="chip">Stripe</span>
+          <span class="chip">Cloud Run</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ OSS ============ -->
+  <section id="oss">
+    <span class="eyebrow">Open source &middot; 83 stars</span>
+    <p style="margin-bottom:24px;max-width:64ch">Small, sharp PHP tooling. Every one of these exists because I hit the problem on a real project first and could not find something that solved it properly.</p>
+
+    <div class="grid-2">
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/nexus-inventory">nexus-inventory</a>
+          <span class="stars"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25l2.3 4.7 5.2.75-3.75 3.65.9 5.15L8 12.05l-4.65 2.45.9-5.15L.5 5.7l5.2-.75L8 .25Z"/></svg>29</span>
+        </div>
+        <p>Multi&#8209;channel stock synchronisation for Laravel. Keeps Shopify, WooCommerce, Amazon and Etsy in agreement through real&#8209;time webhooks and queued reconciliation, including the awkward part where two channels sell the last unit at the same moment.</p>
+        <div class="tags"><span class="tag">Laravel 10&#8209;12</span><span class="tag">Webhooks</span><span class="tag">Job queues</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/php-sentinel">php-sentinel</a>
+          <span class="stars"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25l2.3 4.7 5.2.75-3.75 3.65.9 5.15L8 12.05l-4.65 2.45.9-5.15L.5 5.7l5.2-.75L8 .25Z"/></svg>18</span>
+        </div>
+        <p>Passive API contract monitoring for PHP 8.3+. Uses probabilistic inference to learn the shape of upstream JSON, then flags drift (a field that vanished, a type that quietly changed) without you hand&#8209;writing a single schema.</p>
+        <div class="tags"><span class="tag">PHP 8.3+</span><span class="tag">Schema drift</span><span class="tag">MIT</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/Laravel-migration-guard">Laravel-migration-guard</a>
+          <span class="stars"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25l2.3 4.7 5.2.75-3.75 3.65.9 5.15L8 12.05l-4.65 2.45.9-5.15L.5 5.7l5.2-.75L8 .25Z"/></svg>18</span>
+        </div>
+        <p>Static analysis that reads your migrations in CI and refuses the ones that take a table lock or drop a column with data behind it. Zero config. The <code>strong_migrations</code> equivalent for Laravel.</p>
+        <div class="tags"><span class="tag">AST parser</span><span class="tag">CI gate</span><span class="tag">Zero config</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/wp-hook-check">wp-hook-check</a>
+          <span class="stars"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25l2.3 4.7 5.2.75-3.75 3.65.9 5.15L8 12.05l-4.65 2.45.9-5.15L.5 5.7l5.2-.75L8 .25Z"/></svg>10</span>
+        </div>
+        <p>Finds orphaned listeners, unheard hooks and misspelled action names in WordPress source without ever bootstrapping WordPress. Fast enough to run on every commit.</p>
+        <div class="tags"><span class="tag">PHP CLI</span><span class="tag">WordPress</span><span class="tag">Static analysis</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/notification-center">notification-center</a>
+          <span class="stars"><svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .25l2.3 4.7 5.2.75-3.75 3.65.9 5.15L8 12.05l-4.65 2.45.9-5.15L.5 5.7l5.2-.75L8 .25Z"/></svg>8</span>
+        </div>
+        <p>Multi&#8209;channel dispatch for Laravel 12 with parallel workers and circuit&#8209;breaker routing. When a provider starts timing out it trips, reroutes, and stops burning worker time on a dead endpoint.</p>
+        <div class="tags"><span class="tag">Laravel 12</span><span class="tag">Circuit breaker</span><span class="tag">Telemetry</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/blade-access">blade-access</a>
+        </div>
+        <p>73 WCAG 2.1 AA rules for Blade and Livewire, aimed at European Accessibility Act deadlines. Ships a baseline file, so you can adopt it on a legacy codebase without a red build on day one. No runtime dependency.</p>
+        <div class="tags"><span class="tag">WCAG 2.1 AA</span><span class="tag">Baseline</span><span class="tag">CI</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/ai-mcp">ai-mcp</a>
+        </div>
+        <p>Makes a WordPress site legible to AI agents. Semantic chunking, FAQ extraction, media and author indexing, plus <code>llms.txt</code> and an MCP manifest, all exposed over REST.</p>
+        <div class="tags"><span class="tag">MCP</span><span class="tag">WordPress</span><span class="tag">REST</span></div>
+      </div>
+
+      <div class="repo">
+        <div class="repo-top">
+          <a href="https://github.com/malikad778/woocommerce-otp-auth-engine">woocommerce-otp-auth-engine</a>
+        </div>
+        <p>OTP registration gating that runs <em>before</em> the user row is written, so bots never create the account at all. Includes SMS pumping and AIT fraud defence, which is the part most OTP plugins leave you exposed on.</p>
+        <div class="tags"><span class="tag">WooCommerce</span><span class="tag">Fraud defence</span><span class="tag">Multisite</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ STACK ============ -->
+  <section id="stack">
+    <span class="eyebrow">Stack</span>
+    <div class="card" style="padding:8px 26px">
+      <div class="srow">
+        <span>Core</span>
+        <div class="chips" style="margin:0">
+          <span class="chip">PHP 8.2 / 8.3 / 8.4</span><span class="chip">Laravel 11 / 12</span><span class="chip">Filament 3</span><span class="chip">Livewire</span><span class="chip">WordPress core</span><span class="chip">TypeScript</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span>Data</span>
+        <div class="chips" style="margin:0">
+          <span class="chip">MySQL 8</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB Atlas</span><span class="chip">Redis</span><span class="chip">Horizon</span><span class="chip">Upstash</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span>Infra</span>
+        <div class="chips" style="margin:0">
+          <span class="chip">Docker</span><span class="chip">Google Cloud Run</span><span class="chip">Cloudflare R2</span><span class="chip">Nginx</span><span class="chip">Linux</span><span class="chip">GitHub Actions</span><span class="chip">Supervisor</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span>Front</span>
+        <div class="chips" style="margin:0">
+          <span class="chip">Next.js 14 / 15</span><span class="chip">React</span><span class="chip">Tailwind</span><span class="chip">Alpine.js</span><span class="chip">Vite</span><span class="chip">GrapesJS</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span>Integrate</span>
+        <div class="chips" style="margin:0">
+          <span class="chip">Meta Graph API</span><span class="chip">WhatsApp Cloud API</span><span class="chip">Stripe + Connect</span><span class="chip">OpenAI</span><span class="chip">Model Context Protocol</span><span class="chip">OAuth</span>
+        </div>
+      </div>
+      <div class="srow">
+        <span>Testing</span>
+        <div class="chips" style="margin:0">
+          <span class="chip">PHPUnit 11</span><span class="chip">Pint</span><span class="chip">nikic/php-parser</span><span class="chip">Mockery</span><span class="chip">composer audit</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ACTIVITY ============ -->
+  <section id="activity">
+    <span class="eyebrow">The code itself</span>
+    <div class="grid-3">
+      <div class="stat"><div class="n">778</div><div class="l">Contributions, 12mo</div></div>
+      <div class="stat"><div class="n">83<em>&#9733;</em></div><div class="l">Stars on packages</div></div>
+      <div class="stat"><div class="n">13</div><div class="l">Public repos, no forks</div></div>
+    </div>
+
+    <div class="langs">
+      <p style="font-size:13px;color:var(--muted);font-family:var(--mono);letter-spacing:.04em;margin-bottom:14px">Language split across the eight packages, by source bytes</p>
+      <div class="bar" role="img" aria-label="Language split across packages: PHP 87.1 percent, Blade 6.6 percent, JavaScript 3.5 percent, CSS and HTML 2.8 percent">
+        <i style="width:87.1%;background:#777BB4"></i>
+        <i style="width:6.6%;background:#FF2D20"></i>
+        <i style="width:3.5%;background:#1F6FEB"></i>
+        <i style="width:2.8%;background:#8957E5"></i>
+      </div>
+      <div class="legend">
+        <span><span class="dot" style="background:#777BB4"></span>PHP 87.1%</span>
+        <span><span class="dot" style="background:#FF2D20"></span>Blade 6.6%</span>
+        <span><span class="dot" style="background:#1F6FEB"></span>JavaScript 3.5%</span>
+        <span><span class="dot" style="background:#8957E5"></span>CSS / HTML 2.8%</span>
+      </div>
+      <p style="margin-top:18px;font-size:14px;color:var(--muted)">Measured over the eight package repositories rather than every repo on the account, because the portfolio site's vendored assets would otherwise drown the signal. That volume is library work, not commit&#8209;streak padding: the five starred packages account for most of it, and they run inside other people's CI.</p>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section id="process">
+    <span class="eyebrow">How I work</span>
+    <div class="prin">
+      <p><b>Write the test that fails when the invariant breaks</b>, not the one that passes today. A green suite that never disagrees with you is decoration. The valuable tests in a multi&#8209;tenant system are the ones that go red the moment someone collapses two axes into one.</p>
+      <p><b>Fail loudly at the boundary, gracefully in the middle.</b> Reject a malformed payload at ingestion, where the error is cheap and the context is complete. Do not let it become a half&#8209;written row three services deep, discovered a week later by a customer.</p>
+      <p><b>Record the deviation and the reason.</b> Plans are wrong in places. The useful artefact six months later is not the plan, it is knowing exactly why the code diverged from it and what would have to change for the original approach to work.</p>
+      <p><b>The comment explains why, the code explains what.</b> If a block needs a comment to describe what it does, the fix is to rewrite the block. Save the comments for the constraint you cannot see from the syntax.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="foot-in">
+    <p class="avail"><span class="dot"></span>Open to backend and platform work</p>
+    <p style="font-size:14px;color:var(--muted);max-width:52ch">Laravel, PHP, multi&#8209;tenant SaaS, integration&#8209;heavy systems. Based in Pakistan, working remotely.</p>
+    <div class="foot-links">
+      <a href="mailto:adnanhaider0347@gmail.com">adnanhaider0347@gmail.com</a><i>&middot;</i>
+      <a href="https://codebyadnan.tech">codebyadnan.tech</a><i>&middot;</i>
+      <a href="https://github.com/malikad778">GitHub</a><i>&middot;</i>
+      <a href="https://www.linkedin.com/in/adnan-haider/">LinkedIn</a>
+    </div>
+    <p class="copy">&copy; 2026 Adnan Haider</p>
+  </div>
+</footer>
+
+</body>
+</html>
