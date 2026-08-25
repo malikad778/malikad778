@@ -1,7 +1,5 @@
 <div align="center">
 
-# Adnan Haider
-
 ### Backend Engineer &nbsp;·&nbsp; Laravel &nbsp;·&nbsp; PHP 8.3 &nbsp;·&nbsp; Multi&#8209;tenant SaaS
 
 Six years of PHP, most of it on the unglamorous half. The queue that has to drain.
