@@ -179,7 +179,7 @@ Active packages built to solve structural problems in production and published t
 <table>
 <tr>
 <td width="50%" valign="top">
-### [supabase-edge-guard](https://github.com/malikad778/supabase-edge-guard)
+<h3><a href="https://github.com/malikad778/supabase-edge-guard">supabase-edge-guard</a></h3>
 
 <img src="https://img.shields.io/badge/npm-v0.2.1-3ecf8e?style=flat-square&labelColor=0D1117&logo=npm&logoColor=3ecf8e" alt="npm version"/> <img src="https://img.shields.io/badge/Packagist-v0.2.1-F28D1A?style=flat-square&labelColor=0D1117&logo=packagist&logoColor=F28D1A" alt="Packagist version"/> <img src="https://img.shields.io/badge/CI-passing-3FB950?style=flat-square&labelColor=0D1117&logo=githubactions&logoColor=white" alt="CI status"/> <img src="https://img.shields.io/badge/SARIF%202.1.0-validated-orange?style=flat-square&labelColor=0D1117" alt="SARIF"/>
 
@@ -192,7 +192,7 @@ Cross-boundary static security analyzer and Row Level Security (RLS) auditor for
 `TypeScript AST` &nbsp;`Supabase / Postgres` &nbsp;`RLS Auditor` &nbsp;`MCP Server`
 </td>
 <td width="50%" valign="top">
-### [laravel-queue-guard](https://github.com/malikad778/laravel-queue-guard)
+<h3><a href="https://github.com/malikad778/laravel-queue-guard">laravel-queue-guard</a></h3>
 
 <img src="https://img.shields.io/badge/CI-passing-3FB950?style=flat-square&labelColor=0D1117&logo=githubactions&logoColor=white" alt="CI status"/> <img src="https://img.shields.io/badge/license-MIT-3FB950?style=flat-square&labelColor=0D1117" alt="license"/> <img src="https://img.shields.io/badge/rules-9%20detectors-1F6FEB?style=flat-square&labelColor=0D1117" alt="rules"/>
 
@@ -207,7 +207,7 @@ Zero-bootstrap static AST security analyzer and reliability linter for Laravel q
 </tr>
 <tr>
 <td width="50%" valign="top">
-### [laravel-tenant-guard](https://github.com/malikad778/laravel-tenant-guard)
+<h3><a href="https://github.com/malikad778/laravel-tenant-guard">laravel-tenant-guard</a></h3>
 
 <img src="https://img.shields.io/badge/CI-passing-3FB950?style=flat-square&labelColor=0D1117&logo=githubactions&logoColor=white" alt="CI status"/> <img src="https://img.shields.io/badge/license-MIT-3FB950?style=flat-square&labelColor=0D1117" alt="license"/>
 
@@ -220,7 +220,7 @@ Zero overhead static analysis and AST security scanner for multitenant Laravel S
 `AST static analysis` &nbsp;`Multitenant SaaS` &nbsp;`PHPStan 2.x`
 </td>
 <td width="50%" valign="top">
-### [Laravel-migration-guard](https://github.com/malikad778/Laravel-migration-guard)
+<h3><a href="https://github.com/malikad778/Laravel-migration-guard">Laravel-migration-guard</a></h3>
 
 <img src="https://img.shields.io/packagist/dt/malikad778/laravel-migration-guard?style=flat-square&labelColor=0D1117&color=3FB950&logo=packagist&logoColor=3FB950" alt="Packagist downloads"/> <img src="https://img.shields.io/badge/stars-18-D29922?style=flat-square&labelColor=0D1117&logo=github&logoColor=D29922" alt="stars"/>
 
@@ -235,7 +235,7 @@ Catches dangerous, table locking, or destructive database migrations in CI befor
 </tr>
 <tr>
 <td width="50%" valign="top">
-### [php-sentinel](https://github.com/malikad778/php-sentinel)
+<h3><a href="https://github.com/malikad778/php-sentinel">php-sentinel</a></h3>
 
 <img src="https://img.shields.io/packagist/dt/malikad778/php-sentinel?style=flat-square&labelColor=0D1117&color=3FB950&logo=packagist&logoColor=3FB950" alt="Packagist downloads"/> <img src="https://img.shields.io/badge/stars-18-D29922?style=flat-square&labelColor=0D1117&logo=github&logoColor=D29922" alt="stars"/>
 
@@ -248,7 +248,7 @@ Passive API contract monitoring for strictly typed PHP 8.3+. Silently samples li
 `PHP 8.3+` &nbsp;`Schema drift detection` &nbsp;`Probabilistic inference`
 </td>
 <td width="50%" valign="top">
-### [nexus-inventory](https://github.com/malikad778/nexus-inventory)
+<h3><a href="https://github.com/malikad778/nexus-inventory">nexus-inventory</a></h3>
 
 <img src="https://img.shields.io/packagist/dt/malikad778/nexus-inventory?style=flat-square&labelColor=0D1117&color=3FB950&logo=packagist&logoColor=3FB950" alt="Packagist downloads"/> <img src="https://img.shields.io/badge/stars-30-D29922?style=flat-square&labelColor=0D1117&logo=github&logoColor=D29922" alt="stars"/>
 
@@ -264,7 +264,7 @@ Unified, driver based Laravel package for multi channel inventory and catalog sy
 </tr>
 <tr>
 <td width="50%" valign="top">
-### [notification-center](https://github.com/malikad778/notification-center)
+<h3><a href="https://github.com/malikad778/notification-center">notification-center</a></h3>
 
 <img src="https://img.shields.io/badge/stars-8-D29922?style=flat-square&labelColor=0D1117&logo=github&logoColor=D29922" alt="stars"/> <img src="https://img.shields.io/github/last-commit/malikad778/notification-center?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/>
 
@@ -277,7 +277,7 @@ Enterprise notification microservice and domain package built for Laravel 12 & P
 `Laravel 12` &nbsp;`PHP 8.4` &nbsp;`Circuit breaker` &nbsp;`Laravel Pulse`
 </td>
 <td width="50%" valign="top">
-### [wp-hook-check](https://github.com/malikad778/wp-hook-check)
+<h3><a href="https://github.com/malikad778/wp-hook-check">wp-hook-check</a></h3>
 
 <img src="https://img.shields.io/packagist/dt/malikad778/wp-hook-check?style=flat-square&labelColor=0D1117&color=3FB950&logo=packagist&logoColor=3FB950" alt="Packagist downloads"/> <img src="https://img.shields.io/badge/stars-10-D29922?style=flat-square&labelColor=0D1117&logo=github&logoColor=D29922" alt="stars"/>
 
@@ -292,7 +292,7 @@ Static analysis for WordPress hooks. Detects orphaned listeners, unheard hooks, 
 </tr>
 <tr>
 <td width="50%" valign="top">
-### [woocommerce-otp-auth-engine](https://github.com/malikad778/woocommerce-otp-auth-engine)
+<h3><a href="https://github.com/malikad778/woocommerce-otp-auth-engine">woocommerce-otp-auth-engine</a></h3>
 
 <img src="https://img.shields.io/badge/license-MIT-3FB950?style=flat-square&labelColor=0D1117" alt="license"/> <img src="https://img.shields.io/github/last-commit/malikad778/woocommerce-otp-auth-engine?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/>
 
@@ -306,7 +306,7 @@ Decoupled, high performance authentication and registration engine for WooCommer
 `WooCommerce` &nbsp;`Fraud defense` &nbsp;`Transient pipeline` &nbsp;`Multisite`
 </td>
 <td width="50%" valign="top">
-### [blade-access](https://github.com/malikad778/blade-access)
+<h3><a href="https://github.com/malikad778/blade-access">blade-access</a></h3>
 
 <img src="https://img.shields.io/badge/license-MIT-3FB950?style=flat-square&labelColor=0D1117" alt="license"/> <img src="https://img.shields.io/github/last-commit/malikad778/blade-access?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/>
 
@@ -321,7 +321,7 @@ Static accessibility analyzer for Laravel Blade & Livewire views enforcing 73 WC
 </tr>
 <tr>
 <td colspan="2" valign="top">
-### [php-vs-go-benchmark](https://github.com/malikad778/php-vs-go-benchmark)
+<h3><a href="https://github.com/malikad778/php-vs-go-benchmark">php-vs-go-benchmark</a></h3>
 
 <img src="https://img.shields.io/badge/license-MIT-3FB950?style=flat-square&labelColor=0D1117" alt="license"/> <img src="https://img.shields.io/github/last-commit/malikad778/php-vs-go-benchmark?style=flat-square&labelColor=0D1117&color=1F6FEB" alt="last commit"/>
 
