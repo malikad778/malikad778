@@ -1,4 +1,4 @@
-﻿<div align="center">
+<div align="center">
 
 # Adnan Haider
 
@@ -8,7 +8,7 @@ Six years of engineering high throughput backend infrastructure, resilient distr
 Specialized in the load bearing layers of production software: the webhook that cannot return a 502, the queue that must never drop a paid event,
 the migration that would take an exclusive table lock at peak traffic, and the static analyzers that keep teams from introducing silent failures.
 
-Founder of **[The Regret Index](https://regretindex.me)** (backed by Google Cloud for Startups & MongoDB for Startups). Author of 9 open source packages. 450+ delivered commercial projects.
+Founder of **[The Regret Index](https://regretindex.me)** (backed by Google Cloud for Startups & MongoDB for Startups). Author of 11 open source packages. 450+ delivered commercial projects.
 
 <br/>
 
@@ -16,11 +16,12 @@ Founder of **[The Regret Index](https://regretindex.me)** (backed by Google Clou
 <a href="https://www.linkedin.com/in/adnan-haider/"><img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/></a>
 <a href="https://regretindex.me"><img src="https://img.shields.io/badge/The%20Regret%20Index-0D1117?style=for-the-badge&logo=vercel&logoColor=8957E5" alt="The Regret Index"/></a>
 <a href="https://packagist.org/packages/malikad778/"><img src="https://img.shields.io/badge/Packagist%20Packages-0D1117?style=for-the-badge&logo=packagist&logoColor=F28D1A" alt="Packagist"/></a>
+<a href="https://www.npmjs.com/~askmalikadnan"><img src="https://img.shields.io/badge/npm%20Packages-0D1117?style=for-the-badge&logo=npm&logoColor=CB3837" alt="npm"/></a>
 <a href="mailto:adnanhaider0347@gmail.com"><img src="https://img.shields.io/badge/Email-0D1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/></a>
 
 <br/><br/>
 
-<img src="https://img.shields.io/badge/6%2B%20Years-Engineering-0D1117?style=flat-square&labelColor=1B7F3B&color=0D1117" alt="6+ Years Experience"/> <img src="https://img.shields.io/badge/450%2B-Projects%20Delivered-0D1117?style=flat-square&labelColor=1F6FEB&color=0D1117" alt="450+ Projects Delivered"/> <img src="https://img.shields.io/badge/9-Open%20Source%20Packages-0D1117?style=flat-square&labelColor=8957E5&color=0D1117" alt="9 Packages"/> <img src="https://img.shields.io/badge/Verified-5.0%20%E2%98%85%20Track%20Record-0D1117?style=flat-square&labelColor=D29922&color=0D1117" alt="5.0 Star Rating"/>
+<img src="https://img.shields.io/badge/6%2B%20Years-Engineering-0D1117?style=flat-square&labelColor=1B7F3B&color=0D1117" alt="6+ Years Experience"/> <img src="https://img.shields.io/badge/450%2B-Projects%20Delivered-0D1117?style=flat-square&labelColor=1F6FEB&color=0D1117" alt="450+ Projects Delivered"/> <img src="https://img.shields.io/badge/11-Open%20Source%20Packages-0D1117?style=flat-square&labelColor=8957E5&color=0D1117" alt="11 Packages"/> <img src="https://img.shields.io/badge/Verified-5.0%20%E2%98%85%20Track%20Record-0D1117?style=flat-square&labelColor=D29922&color=0D1117" alt="5.0 Star Rating"/>
 
 </div>
 
@@ -173,9 +174,37 @@ sequenceDiagram
 
 # Open Source Packages & Developer Tooling
 
-Active packages built to solve structural problems in production and published to Packagist and GitHub.
+Active packages built to solve structural problems in production and published to Packagist, npm, and GitHub.
 
 <table>
+<tr>
+<td width="50%" valign="top">
+### [supabase-edge-guard](https://github.com/malikad778/supabase-edge-guard)
+
+<img src="https://img.shields.io/badge/npm-v0.2.1-3ecf8e?style=flat-square&labelColor=0D1117&logo=npm&logoColor=3ecf8e" alt="npm version"/> <img src="https://img.shields.io/badge/Packagist-v0.2.1-F28D1A?style=flat-square&labelColor=0D1117&logo=packagist&logoColor=F28D1A" alt="Packagist version"/> <img src="https://img.shields.io/badge/CI-passing-3FB950?style=flat-square&labelColor=0D1117&logo=githubactions&logoColor=white" alt="CI status"/> <img src="https://img.shields.io/badge/SARIF%202.1.0-validated-orange?style=flat-square&labelColor=0D1117" alt="SARIF"/>
+
+Cross-boundary static security analyzer and Row Level Security (RLS) auditor for Next.js, TanStack Start, Lovable (Vite), and Supabase apps. Correlates TypeScript AST with SQL migrations to catch critical vulnerabilities before deploy.
+
+- 18 high-precision rules (SG001–SG018) detecting cookie spoofing, service_role leaks, SECURITY DEFINER RPCs, unindexed FKs, and RLS gaps
+- Automated `--fix` engine generating TypeScript refactors and safe SQL migrations
+- Ships with Model Context Protocol (MCP) server, SARIF 2.1.0 reporter, and GitHub Action
+
+`TypeScript AST` &nbsp;`Supabase / Postgres` &nbsp;`RLS Auditor` &nbsp;`MCP Server`
+</td>
+<td width="50%" valign="top">
+### [laravel-queue-guard](https://github.com/malikad778/laravel-queue-guard)
+
+<img src="https://img.shields.io/badge/CI-passing-3FB950?style=flat-square&labelColor=0D1117&logo=githubactions&logoColor=white" alt="CI status"/> <img src="https://img.shields.io/badge/license-MIT-3FB950?style=flat-square&labelColor=0D1117" alt="license"/> <img src="https://img.shields.io/badge/rules-9%20detectors-1F6FEB?style=flat-square&labelColor=0D1117" alt="rules"/>
+
+Zero-bootstrap static AST security analyzer and reliability linter for Laravel queues, Horizon, and background jobs. Prevents database connection exhaustion, money-losing non-idempotent retries, and race conditions before deploy.
+
+- 9 specialized detectors (QG001–QG009) catching HTTP calls in DB transactions, financial retries, missing SerializesModels, and Horizon timeout drift
+- Automated `--fix` safe code transforms and `@queue-safe` granular docblock exemptions
+- Standalone CLI, PHPStan 2.x extension, SARIF 2.1.0, and GitHub Action annotations
+
+`AST static analysis` &nbsp;`Laravel Horizon` &nbsp;`Distributed Queues` &nbsp;`PHPStan 2.x`
+</td>
+</tr>
 <tr>
 <td width="50%" valign="top">
 ### [laravel-tenant-guard](https://github.com/malikad778/laravel-tenant-guard)
